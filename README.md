@@ -1,35 +1,107 @@
 <p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
+  <a href="https://nestjs.com/" target="_blank">
+    <img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo"/>
+  </a>
 </p>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
-
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
+<p align="center">
+  <b>A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient, scalable, and enterprise-grade server-side applications.</b>
 </p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
+<p align="center">
+  <a href="https://www.npmjs.com/~nestjscore" target="_blank">
+    <img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version"/>
+  </a>
+  <a href="https://www.npmjs.com/~nestjscore" target="_blank">
+    <img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License"/>
+  </a>
+  <a href="https://www.npmjs.com/~nestjscore" target="_blank">
+    <img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads"/>
+  </a>
+  <a href="https://circleci.com/gh/nestjs/nest" target="_blank">
+    <img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI"/>
+  </a>
+  <a href="https://discord.gg/G7Qnnhy" target="_blank">
+    <img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/>
+  </a>
+  <a href="https://twitter.com/nestframework" target="_blank">
+    <img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"/>
+  </a>
+</p>
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+---
 
-## Project setup
+# 🚀 NestJS Starter Project
+
+A **NestJS + TypeScript starter** focused on a REST API with PostgreSQL, TypeORM, JWT auth, validation, and tests.  
+This README shows how to set up, run, test, and deploy the project.
+
+---
+
+## ✨ Features
+
+- RESTful CRUD APIs using NestJS controllers & services  
+- PostgreSQL integration using TypeORM (entities & migrations)  
+- JWT authentication + Passport strategies  
+- Input validation with `class-validator` & `class-transformer`  
+- Unit & E2E tests with Jest & `@nestjs/testing`  
+- Swagger-ready (optionally) for API docs  
+- Docker-friendly & cloud deployment ready
+
+---
+
+## 📋 Prerequisites
+
+- Node.js v18+ (or LTS)  
+- npm or yarn  
+- PostgreSQL v12+ (local or Docker)  
+- Git
+
+---
+
+## ⚙️ Quick Project Setup
 
 ```bash
+# 1. clone
+git clone https://github.com/your-username/backend-api.git
+cd backend-api
+
+# 2. install deps
+npm install
+# or
+# yarn
+
+
+```bash
+backend-api/
+├─ src/
+│  ├─ modules/
+│  │  ├─ users/
+│  │  │  ├─ dto/
+│  │  │  ├─ users.controller.ts
+│  │  │  ├─ users.service.ts
+│  │  │  └─ user.entity.ts
+│  │  └─ auth/
+│  │     ├─ auth.controller.ts
+│  │     ├─ auth.service.ts
+│  │     └─ jwt.strategy.ts
+│  ├─ common/
+│  │  ├─ filters/
+│  │  ├─ guards/
+│  │  └─ interceptors/
+│  ├─ app.module.ts
+│  └─ main.ts
+├─ test/                 # e2e & unit tests
+├─ ormconfig.ts          # or rely on TypeOrmModule & env
+├─ .env.example
+├─ .gitignore
+└─ package.json
+
+
+$ git clone https://github.com/your-username/backend-api.git
+$ cd backend-api
 $ npm install
-```
+
 
 ## Compile and run the project
 
@@ -44,9 +116,46 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
+## .env.example
+PORT=3000
+
+## PostgreSQL
+DATABASE_HOST=localhost
+DATABASE_PORT=5432
+DATABASE_USER=nest_user
+DATABASE_PASSWORD=nest_password
+DATABASE_NAME=nest_demo
+
+## TypeORM
+TYPEORM_SYNCHRONIZE=true      # true only for dev, false in prod
+TYPEORM_LOGGING=false
+
+## JWT
+JWT_SECRET=ChangeThisToAStrongSecret
+JWT_EXPIRES_IN=3600s
+
+psql -h localhost -U postgres -c "CREATE DATABASE nest_demo;"
+## optionally create a dedicated db user:
+psql -h localhost -U postgres -c "CREATE USER nest_user WITH PASSWORD 'nest_password';"
+psql -h localhost -U postgres -c "GRANT ALL PRIVILEGES ON DATABASE nest_demo TO nest_user;"
+ 
+### 🔎 Explanation
+
 ## Run tests
 
 ```bash
+- **src/** → main source code of the application  
+  - **modules/** → contains feature modules following NestJS modular architecture (e.g., `users`, `auth`, etc.)  
+  - **common/** → reusable pieces like custom exceptions, guards, interceptors, and pipes  
+  - **main.ts** → entry point that bootstraps the NestJS app  
+  - **app.module.ts** → root module that imports other modules  
+- **test/** → contains Jest unit and end-to-end (E2E) test cases  
+- **ormconfig.ts** → TypeORM configuration (database connection, entities, migrations)  
+- **package.json** → dependencies, scripts, and metadata for the project  
+- **README.md** → documentation for setup and usage  
+
+---
+
 # unit tests
 $ npm run test
 
@@ -56,7 +165,15 @@ $ npm run test:e2e
 # test coverage
 $ npm run test:cov
 ```
+---
 
+## 🛠 Database Setup
+
+Create a PostgreSQL database (example: `nest_demo`):
+
+```bash
+psql -h localhost -U postgres -c "CREATE DATABASE nest_demo;"
+ 
 ## Deployment
 
 When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
